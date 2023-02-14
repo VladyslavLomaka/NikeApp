@@ -7,7 +7,6 @@ export const ProductsScreen = () => {
     <FlatList
       data={products}
       renderItem={({item}) => {
-        console.log(item.image);
         return (
           <View style={styles.itemContainer}>
             <Image

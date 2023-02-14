@@ -1,17 +1,18 @@
 import React from 'react';
 import {StyleSheet, SafeAreaView} from 'react-native';
-import {ProductsScreen} from './scr/screens/ProductsScreen';
+// import {ProductsScreen} from './scr/screens/ProductsScreen';
+import {ProductDetailsScreen} from './scr/screens/ProductDetailsScreen';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ProductsScreen />
+      <ProductDetailsScreen />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {flex: 1},
 });
 
 export default App;

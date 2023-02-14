@@ -5,15 +5,15 @@ import {
   View,
   Image,
   FlatList,
-  useWindowDimensions,
+  Dimensions,
   ScrollView,
   Pressable,
 } from 'react-native';
 import products from '../data/products';
 
-export const ProductDetailsScreen = () => {
-  const {width} = useWindowDimensions();
+const screenWidth = Dimensions.get('window').width;
 
+export const ProductDetailsScreen = () => {
   const product = products[0];
 
   const addToCart = () => {
@@ -27,7 +27,7 @@ export const ProductDetailsScreen = () => {
         <FlatList
           data={product.images}
           renderItem={({item}) => (
-            <Image source={{uri: item}} style={{width, aspectRatio: 1}} />
+            <Image source={{uri: item}} style={styles.image} />
           )}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -36,7 +36,7 @@ export const ProductDetailsScreen = () => {
 
         {/* Title */}
 
-        <View style={{padding: 20}}>
+        <View style={styles.viewPadding}>
           <Text style={styles.title}>{product.name}</Text>
 
           {/* Price */}
@@ -58,6 +58,13 @@ export const ProductDetailsScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  viewPadding: {
+    padding: 20,
+  },
+  image: {
+    width: screenWidth,
+    aspectRatio: 1,
+  },
   title: {
     fontSize: 34,
     fontWeight: '500',

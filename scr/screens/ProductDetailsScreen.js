@@ -9,16 +9,16 @@ import {
   ScrollView,
   Pressable,
 } from 'react-native';
-import products from '../data/products';
+import {useSelector} from 'react-redux';
 
 const screenWidth = Dimensions.get('window').width;
 
-export const ProductDetailsScreen = () => {
-  const product = products[0];
+export const ProductDetailsScreen = ({navigation}) => {
+  const product = useSelector(state => state.products.selectedProduct);
 
-  const addToCart = () => {
-    console.log('added');
-  };
+  console.log(product);
+
+  const addToCart = () => {};
   return (
     <View style={styles.container}>
       <ScrollView>

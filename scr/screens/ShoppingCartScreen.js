@@ -20,7 +20,7 @@ const ShoppingCartTotal = () => (
   </View>
 );
 
-export const ShoppingCartScreen = () => {
+export const ShoppingCartScreen = ({navigation}) => {
   return (
     <>
       <FlatList
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     margin: 10,
     padding: 20,
+    marginBottom: 20,
   },
   buttonText: {
     color: 'white',

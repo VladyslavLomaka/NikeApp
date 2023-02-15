@@ -1,16 +1,16 @@
 import React from 'react';
 import {StyleSheet, SafeAreaView} from 'react-native';
-import {ProductsScreen} from './scr/screens/ProductsScreen';
-import {ProductDetailsScreen} from './scr/screens/ProductDetailsScreen';
-import {ShoppingCartScreen} from './scr/screens/ShoppingCartScreen';
+import {Navigation} from './scr/navigation';
+import {Provider} from 'react-redux';
+import {store} from './scr/store';
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      {/* <ProductDetailsScreen /> */}
-      {/* <ProductsScreen /> */}
-      <ShoppingCartScreen />
-    </SafeAreaView>
+    <Provider store={store}>
+      <SafeAreaView style={styles.container}>
+        <Navigation />
+      </SafeAreaView>
+    </Provider>
   );
 };
 
